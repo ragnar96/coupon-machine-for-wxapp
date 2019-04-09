@@ -1,0 +1,7 @@
+
+<view class="container">
+  <view class="poster-session" style="width:{{windowWidth}}px; height:{{windowWidth}}px">
+  
+    <image class="poster" style="width:{{windowWidth}}px; height:{{windowWidth}}px" src="{{posterUrl}}" bindtap="handleTap"></image>
+  </view>
+</view>

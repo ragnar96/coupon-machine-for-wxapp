@@ -1,0 +1,36 @@
+
+<view class="container_detail">
+
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" class = "userlogin" bindgetuserinfo="getUserInfo"> 登陆 </button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+
+ 
+  
+  <view class="event-action event-session-spacing">
+
+    <view class="event-schedule" bindtap="handleSchedule">
+     <label class="action-label" >
+    </label>
+    </view>
+
+    <view wx:if = "{{!ifsp}}" class="event-map" >
+     <image class="action-icon" src="../../resources/images/jiaocheng-icon-a.png"></image>
+      <label class="action-labela" data-image = '{{speechword.imgj}}' bindtap='handlePosterTap' > 新手教程
+      </label>
+    </view>
+
+    <view class="event-ticket" bindtap="handleKefu">
+      <image class="action-icon" src="../../resources/images/kefu-icon-a.png"></image>
+      <label class="action-labelb" bindtap='handleKefuTap'>联系客服
+      </label>
+    </view>
+  
+  </view>
+ </view>
+      

@@ -1,0 +1,352 @@
+
+<!--des-->
+<view wx:if = "{{ifsp}}">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{designimgUrls}}">
+            <swiper-item>
+                <image src="{{item}}" class="slide-image"/>
+            </swiper-item>
+        </block>
+    </swiper>
+ 
+ 
+  <view class="category-panel">
+
+ <view class="category-item">
+            <image class="category-item-image" src="../../resources/images/quandesign/piao.png" />
+            <text class="category-item-text">入场券</text>
+        </view>
+        <view class="category-item">
+            <image class="category-item-image" src="../../resources/images/quandesign/piao.png" />
+            <text class="category-item-text">设计</text>
+        </view>
+        <view class="category-item">
+            <image class="category-item-image" src="../../resources/images/quandesign/piao.png" />
+            <text class="category-item-text">演出</text>
+        </view>
+        <view class="category-item">
+            <image class="category-item-image" src="../../resources/images/quandesign/piao.png" />
+            <text class="category-item-text">聚会</text>
+        </view>
+
+    </view>
+
+  <view class="category-panel">
+
+        <view class="category-item">
+            <image class="category-item-image" src="../../resources/images/quandesign/piao.png" />
+            <text class="category-item-text">会议</text>
+        </view>
+
+                <view class="category-item">
+            <image class="category-item-image" src="../../resources/images/quandesign/piao.png" />
+            <text class="category-item-text">宴席</text>
+        </view>
+
+<view class="category-item">
+            <image class="category-item-image" src="../../resources/images/quandesign/piao.png" />
+            <text class="category-item-text">婚礼</text>
+        </view>
+
+                <view class="category-item">
+            <image class="category-item-image" src="../../resources/images/quandesign/piao.png" />
+            <text class="category-item-text">升学</text>
+        </view>
+    </view>
+
+<view class="session-content">
+        <scroll-view class="event-scroll" scroll-x="true">
+
+    <block wx:for="{{designone}}" wx:for-item="goods">
+       <import src="tpl/goodsdesign.wxml"/>
+            <template is="goodsdesign" data="{{goods}}" />
+  </block>
+  
+        </scroll-view>
+      </view>
+
+ <view class="session-content">
+        <scroll-view class="event-scroll" scroll-x="true">
+
+    <block wx:for="{{designtwo}}" wx:for-item="goods">
+       <import src="tpl/goodsdesign.wxml"/>
+            <template is="goodsdesign" data="{{goods}}" />
+  </block>
+  
+        </scroll-view>
+      </view>
+
+ <view class="session-content">
+        <scroll-view class="event-scroll" scroll-x="true">
+
+    <block wx:for="{{designthree}}" wx:for-item="goods">
+       <import src="tpl/goodsdesign.wxml"/>
+            <template is="goodsdesign" data="{{goods}}" />
+  </block>
+  
+        </scroll-view>
+      </view>  
+
+</view>
+
+<!--des-->
+
+
+
+
+
+
+
+
+
+<block wx:else>
+
+<view class="container">
+
+
+  <scroll-view class="scroll-container" upper-threshold="{{sortPanelDist}}"  scroll-y="true" style="width:{{windowWidth}}px; height:{{windowHeight}}px"  bindscrolltolower="handleLower" >
+
+<!--搜索栏-->   
+<view class="search-wrapper"> 
+      <view class="search-section">
+        <view class="search-input-wrapper " >
+        
+         <image class="search-image" src="../../resources/images/search.png"  style="float:left;margin-right:20rpx;"></image>
+
+         <image class="search-image" src="../../resources/images/cancelicon.png" bindtap="clearsearchtext" style="float:right;margin-left:20rpx;"></image>
+
+          <input class="search-input" placeholder="搜索宝贝" value="{{searchtext}}" bindinput="getsearchtext" confirm-type="search"  />   
+
+        </view>
+        <view class="search-button-wrapper">
+          <button class="search-button" bindtap="searchclick">搜索</button>
+        </view>
+      </view>
+  </view>
+
+<!--搜索栏--> 
+
+
+ <!--悬停-->
+ <view style='position:fixed;z-index:1100;top:0px;width: 100%;  '>
+<!--搜索栏-->   
+<view class="search-wrapper"> 
+      <view class="search-section">
+        <view class="search-input-wrapper " >
+        
+         <image class="search-image" src="../../resources/images/search.png"  style="float:left;margin-right:20rpx;"></image>
+
+         <image class="search-image" src="../../resources/images/cancelicon.png" bindtap="clearsearchtext" style="float:right;margin-left:20rpx;"></image>
+
+          <input class="search-input" placeholder="搜索宝贝" value="{{searchtext}}" bindinput="getsearchtext" confirm-type="search"  />   
+
+        </view>
+        <view class="search-button-wrapper">
+          <button class="search-button" bindtap="searchclick">搜索</button>
+        </view>
+      </view>
+  </view>
+
+<!--搜索栏--> 
+</view>
+ <!--悬停-->
+
+
+
+   <!--滚动横幅部分-->
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}">
+            <swiper-item>
+                <image src="{{item}}" class="slide-image"/>
+            </swiper-item>
+        </block>
+    </swiper>
+<!--滚动横幅部分-->
+
+<!--按钮部分四 yxjp-->
+<view class="page-session page-session-spacing">
+      <view class="session-headeer">
+        <text class="session-title">{{speechword.yxjp}}</text>
+        <text class="more" bindtap="searbutzero">更多</text>
+      </view>
+
+
+<block wx:for="{{xpzdetail}}" wx:for-item="group">
+      <view class="session-content">
+        <scroll-view class="event-scroll" scroll-x="true">
+        
+       <block wx:for="{{group}}" wx:for-item="goods">
+       <import src="tpl/goodsListx.wxml"/>
+            <template is="goodsListx" data="{{goods}}" />
+          </block>
+       
+        </scroll-view>
+      </view>
+  </block>
+      
+    </view>
+<!--按钮部分四 -->
+
+
+
+
+
+
+
+<!--按钮部分一-->
+    <view class="category-panel">
+
+        <view class="category-item" bindtap="searbutzonghe" >
+            <image class="category-item-image" src="../../resources/images/zonghe-icon.png" />
+            <text class="category-item-text">综合</text>
+        </view>
+
+        <view class="category-item" bindtap="searbutone" >
+            <image class="category-item-image" src="../../resources/images/nz-icon.png" />
+            <text class="category-item-text">女装</text>
+        </view>
+
+        <view class="category-item" bindtap="searbuttwo">
+            <image class="category-item-image" src="../../resources/images/nj-icon.png" />
+            <text class="category-item-text">男装</text>
+        </view>
+
+
+        <view class="category-item" bindtap="searbutthree">
+            <image class="category-item-image" src="../../resources/images/outsport-icon.png" />
+            <text class="category-item-text">运动</text>
+        </view>
+
+    </view>
+<!--按钮部分一-->
+
+
+
+
+<!--按钮部分二-->
+    <view class="category-panel">
+
+        <view class="category-item" bindtap="searbutfour" >
+            <image class="category-item-image" src="../../resources/images/mr-icon.png" />
+            <text class="category-item-text">美妆</text>
+        </view>
+
+        <view class="category-item" bindtap="searbutfive">
+            <image class="category-item-image" src="../../resources/images/mombaby-icon.png" />
+            <text class="category-item-text">母婴</text>
+        </view>
+
+
+        <view class="category-item" bindtap="searbutsix">
+            <image class="category-item-image" src="../../resources/images/underwear-icon.png" />
+            <text class="category-item-text">内衣</text>
+        </view>
+
+
+        <view class="category-item" bindtap="searbutseven">
+            <image class="category-item-image" src="../../resources/images/shoe-icon.png" />
+            <text class="category-item-text">鞋包</text>
+        </view>
+
+
+    </view>
+<!--按钮部分二-->
+
+
+
+<!--按钮部分三-->
+    <view class="category-panel">
+
+        <view class="category-item" bindtap="searbuteight" >
+            <image class="category-item-image" src="../../resources/images/jj-icon.png" />
+            <text class="category-item-text">家居</text>
+        </view>
+
+        <view class="category-item" bindtap="searbutnine" >
+            <image class="category-item-image" src="../../resources/images/tj-icon.png" />
+            <text class="category-item-text">童装</text>
+        </view>
+
+        <view class="category-item" bindtap="searbutten">
+            <image class="category-item-image" src="../../resources/images/ls-icon.png" />
+            <text class="category-item-text">零食</text>
+        </view>
+
+
+        <view class="category-item" bindtap="searbuteleven">
+            <image class="category-item-image" src="../../resources/images/homemachine-icon.png" />
+            <text class="category-item-text">家电</text>
+        </view>
+
+
+        
+
+
+    </view>
+<!--按钮部分三-->
+
+
+
+
+
+<!--按钮部分五-->
+    <view class="sort-panel" style="position:{{sortPanelPos}};top:{{sortPanelTop}}px">
+
+
+  <view bindtap='changecss1' class="{{styleclass1}}">
+            <view class="comb-text" bindtap='sortbyvolume'>销量</view>
+            <view class="comb-arrs down">
+                <image class="comb-arr-up" src=""></image>
+                <image class="comb-arr-down" src=""></image>
+            </view>
+        </view>
+
+
+
+
+  <view bindtap='changecss2' class="{{styleclass2}}">    
+            <view class="comb-text" bindtap='sortbydate'>最新</view>
+            <view class="comb-arrs down">
+                <image class="comb-arr-up" src=""></image>
+                <image class="comb-arr-down" src=""></image>
+            </view>
+        </view>      
+
+
+  <view bindtap='changecss3' class="{{styleclass3}}">      
+            <view class="comb-text" bindtap='sortbyquan'>{{speechword.quane}}</view>
+            <view class="comb-arrs down">
+                <image class="comb-arr-up" src=""></image>
+                <image class="comb-arr-down" src=""></image>
+            </view>
+        </view>
+
+
+        
+        <view bindtap='changecss4' class="{{styleclass4}}">
+            <view class="comb-text" bindtap='sortbyprice'>价格</view>
+            <view class="comb-arrs down">
+                <image class="comb-arr-up" src=""></image>
+                <image class="comb-arr-down" src=""></image>
+            </view>
+        </view>
+    </view>
+<!--按钮部分五-->
+
+    <!--商品详情见tpl-goodslist-->
+
+    <view class="goods-panel">
+        <import src="tpl/goodsList.wxml"/>
+        <template is="goodsList" data="{{goodsList:goodsList,ifsp:ifsp,speechword:speechword}}"/>
+    </view>
+
+
+  </scroll-view>
+
+  
+  <view class="tabbar-border"></view>
+</view>
+
+
+
+</block>

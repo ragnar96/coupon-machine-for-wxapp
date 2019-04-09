@@ -1,0 +1,112 @@
+<!--index.wxml-->
+
+
+<view class="container">
+
+
+  <scroll-view class="scroll-container" upper-threshold="{{sortPanelDist}}"  scroll-y="true" style="width:{{windowWidth}}px; height:{{windowHeight}}px"  bindscrolltolower="handleLower" >
+ 
+<!--搜索栏-->   
+<view class="search-wrapper"> 
+      <view class="search-section">
+        <view class="search-input-wrapper " >
+        
+         <image class="search-image" src="../../resources/images/search.png"  style="float:left;margin-right:20rpx;"></image>
+
+         <image class="search-image" src="../../resources/images/cancelicon.png" bindtap="clearsearchtext" style="float:right;margin-left:20rpx;"></image>
+
+          <input class="search-input" placeholder="搜索宝贝" value="{{searchtext}}" bindinput="getsearchtext" confirm-type="search"  />   
+
+        </view>
+        <view class="search-button-wrapper">
+          <button class="search-button" bindtap="searchclick">搜索</button>
+        </view>
+      </view>
+  </view>
+
+<!--搜索栏--> 
+
+<!--按钮部分四-->
+   <!--按钮部分五-->
+    <view class="sort-panel" style="position:{{sortPanelPos}};top:{{sortPanelTop}}px">
+
+
+  <view bindtap='changecss1' class="{{styleclass1}}">
+            <view class="comb-text" bindtap='sortbyvolume'>销量</view>
+            <view class="comb-arrs down">
+                <image class="comb-arr-up" src=""></image>
+                <image class="comb-arr-down" src=""></image>
+            </view>
+        </view>
+
+
+
+
+  <view bindtap='changecss2' class="{{styleclass2}}">    
+            <view class="comb-text" bindtap='sortbydate'>最新</view>
+            <view class="comb-arrs down">
+                <image class="comb-arr-up" src=""></image>
+                <image class="comb-arr-down" src=""></image>
+            </view>
+        </view>      
+
+
+  <view bindtap='changecss3' class="{{styleclass3}}">      
+            <view class="comb-text" bindtap='sortbyquan'>优惠</view>
+            <view class="comb-arrs down">
+                <image class="comb-arr-up" src=""></image>
+                <image class="comb-arr-down" src=""></image>
+            </view>
+        </view>
+
+
+        
+        <view bindtap='changecss4' class="{{styleclass4}}">
+            <view class="comb-text" bindtap='sortbyprice'>价格</view>
+            <view class="comb-arrs down">
+                <image class="comb-arr-up" src=""></image>
+                <image class="comb-arr-down" src=""></image>
+            </view>
+        </view>
+    </view>
+<!--按钮部分四-->
+
+ <!--悬停-->
+ <view style='position:fixed;z-index:1100;top:0px;width: 100%;  '>
+<!--搜索栏-->   
+<view class="search-wrapper"> 
+      <view class="search-section">
+        <view class="search-input-wrapper " >
+        
+         <image class="search-image" src="../../resources/images/search.png"  style="float:left;margin-right:20rpx;"></image>
+
+         <image class="search-image" src="../../resources/images/cancelicon.png" bindtap="clearsearchtext" style="float:right;margin-left:20rpx;"></image>
+
+          <input class="search-input" placeholder="搜索宝贝" value="{{searchtext}}" bindinput="getsearchtext" confirm-type="search"  />   
+
+        </view>
+        <view class="search-button-wrapper">
+          <button class="search-button" bindtap="searchclick">搜索</button>
+        </view>
+      </view>
+  </view>
+
+<!--搜索栏--> 
+</view>
+ <!--悬停-->
+
+
+    <!--商品详情见tpl-goodslist-->
+
+    <view class="goods-panel">
+        <import src="tpl/goodsList.wxml"/>
+        <template is="goodsList" data="{{goodsList:goodsList,ifsp:ifsp,speechword:speechword}}"/>
+    </view>
+
+
+  </scroll-view>
+
+  
+  <view class="tabbar-border"></view>
+</view>
+

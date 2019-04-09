@@ -1,0 +1,180 @@
+<view class='but-wrapper'>
+<view class="user-action event-session-spacing">
+
+<!--yes quan-->
+    <view  wx:if="{{goods.coupon_info}}"  class="btn2">￥{{goods.priceafterquan}} <text style='font-size: 30rpx; color: orangered;'>/ {{speechword.quan}}{{goods.quan}}{{speechword.yuan}} </text> </view>
+
+<block wx:else>
+<view class="btn2">￥{{goods.priceafterquan}} <text style='font-size: 30rpx; color: orangered;'>/ {{speechword.fx}}{{goods.fanxian}}{{speechword.yuan}} </text> </view>
+</block>
+
+<!--shenpi-->
+    <button wx:if = "{{!ifsp}}" class="join" bindtap="gettkl">{{speechword.quan_ling}}</button>
+<!--shenpi-->
+
+  </view>
+</view>
+
+  <!--share button-->  
+<view class='but-wrapper2'>
+
+<!--shenpi-->
+    <button wx:if = "{{!ifsp}}" class="sharebtn2" bindtap="handleshare" open-type="share" >{{speechword.share_friend}}</button>
+<!--shenpi-->
+
+</view>
+<!--share button--> 
+
+<view class="container_detail">
+
+<modal hidden="{{hiddenmodalput}}" title="{{speechword.tkl_title}}" confirm-text="确定" cancel-text="取消" bindcancel="cancelmodal" bindconfirm="confirmmodal" style='font-weight:500;color:black;'>  
+    <view style='color:black;margin-bottom:10rpx;'>{{speechword.tkl_content}}</view>
+    <input wx:if = "{{!hiddenmodalput}}" type='text'value="{{taokouling}}" auto-focus style='color:black; border:2px solid grey; border-radius:2px;'/>  
+</modal>
+
+   <!--滚动横幅部分-->
+    <swiper indicator-dots="{{indicatorDots}}"  interval="{{interval}}" duration="{{duration}}" style="height:{{windowWidth}}px !important">
+
+
+
+  <!--轮播图片-->
+         <block wx:for="{{small_images_string}}" wx:for-item="images">
+            <swiper-item style="height:{{windowWidth * 0.9}}px !important">
+                <image src="{{images}}" class="slide-image" style="height:{{windowWidth}}px !important" data-image = '{{images}}' bindtap='handlePosterTap' />
+            </swiper-item>
+        </block>
+    </swiper>
+<!--滚动横幅部分-->
+
+
+ 
+  
+  <view class="event-action event-session-spacing">
+
+<!--shenpi-->
+<view wx:if = "{{!ifsp}}">
+    <view class="event-schedule" >    
+     <label class="action-label" style='color:#383838'>
+    
+     <image wx:if = "{{shopdetails.shop_type == 'B'}}" class="action-icon-title" src="{{speechword.imgb}}"></image>
+      <image wx:else = "{{shopdetails.shop_type == 'C'}}" class="action-icon-title" src="{{speechword.imgm}}"></image>
+   
+     {{goods.title}}
+    </label> 
+</view>
+</view>
+<!--shenpi-->
+
+    <view class="event-map">
+     <image class="action-icon" src="../../resources/images/price-icon-b.png"></image>
+
+<!--第一栏-->
+     <!--yes quan-->
+      <label wx:if="{{goods.coupon_info}}" class="action-labela" > <view style='color:#383838'>{{speechword.qhj}}:</view>
+      <text style='font-size:33rpx; font-weight:600'> ￥{{goods.priceafterquan}}</text> <text class="action-text" style=' text-decoration:line-through;'>{{speechword.yuanjia}}:￥{{goods.zk_final_price}}</text> 
+      </label>
+
+    <!--no quan-->
+    <block wx:else>
+      <label class="action-labela" > <view style='color:#383838'>{{speechword.qhj}}:</view><text style='font-size:33rpx; font-weight:600'>￥{{goods.priceafterquan}} </text> <text class="action-text" style=' text-decoration:line-through;'>{{speechword.yuanjia}}:￥{{goods.reserve_price}}</text> 
+      </label>
+  </block>
+
+    </view>
+<!--第一栏-->
+
+<!--第二栏-->
+<!--yes quan-->
+
+<!--shenpi-->
+<view wx:if = "{{!ifsp}}">
+    <view wx:if="{{goods.coupon_info}}"  class="event-ticket" >
+      <image class="action-icon" src="{{speechword.imgquanb}}"></image>
+      <label class="action-labelb"><view style='color:#383838'>{{speechword.yhqe}}：</view> <text style='font-size:33rpx; font-weight:600'>{{goods.quan}}元 </text>   <text class="action-text">  {{speechword.yxl}} {{goods.volume}} </text>
+      </label>
+    </view>
+</view>
+<!--shenpi-->
+
+<!--no quan-->
+    <block wx:else>
+    <view  class="event-ticket" >
+      <image class="action-icon" src="{{speechword.imgfx}}"></image>
+      <label class="action-labelb">{{speechword.fx}}： <text style='font-size:33rpx; font-weight:600'> {{goods.fanxian}} {{speechword.yuan}} </text>  <text class="action-text">  {{speechword.yxl}} {{goods.volume}} </text>
+      </label>
+    </view>
+    </block>
+
+<!--第二栏-->
+
+
+<!--第三栏-->
+<!--yes quan-->
+      <view wx:if="{{goods.coupon_info}}"  class="event-ticket" >
+      <image class="action-icon" src="{{speechword.imgfx}}"></image>
+      <label class="action-labelb"><view style='color:#383838'>{{speechword.fx}}：</view> <text style='font-size:33rpx; font-weight:600'>{{goods.fanxian}}{{speechword.yuan}} </text>  <text class="action-text">  {{speechword.jwxfx}}:{{speechword.weixin_no}} </text>
+      </label>
+    </view>
+<!--no quan-->  
+      <block wx:else>
+<view class="event-ticket" >
+      <image class="action-icon" src="{{speechword.imgfx}}"></image>
+      <label class="action-labelb">{{speechword.jwxfx}}： {{speechword.weixin_no}}  
+      </label>
+    </view>
+      </block>
+<!--第三栏-->
+
+
+<!--store info-->
+<!--shenpi-->
+<view wx:if = "{{!ifsp}}">
+<view wx:if = "{{shopdetails}}">
+<view class="event-map">
+
+     <image class="shop-detail-icon-title" src="{{shopdetails.pict_url}}"></image>
+     
+      <label class="action-label-shop" > <view style='color:#383838; margin-right:10rpx;'>  {{shopdetails.shop_title}}</view> 
+       <view>
+       <image wx:if = "{{shopdetails.shop_type == 'B'}}" class="action-icon-title" src="{{speechword.imgb}}"></image>
+      <image wx:else = "{{shopdetails.shop_type == 'C'}}" class="action-icon-title" src="{{speechword.imgm}}"></image>
+      </view>
+
+      </label>
+
+    </view>
+ </view>
+ </view>
+ <!--shenpi-->
+<!--store info-->
+
+  </view>
+
+
+
+
+  <view class="content-session content-session-spacing">
+    <text class="content-title">{{speechword.spxq}}</text>
+    <block wx:if="{{small_images_string}}">
+
+    
+      <view class="content {{extended ? 'content-auto' : 'content-min'}}"> <view class="event-poster {{categoryColor}}">
+    <block wx:for="{{small_images_string}}" wx:for-item="images">
+     <view class="event-poster {{categoryColor}}">
+    <image class="poster poster-spacing" src="{{images}}"></image>
+  </view>
+   
+    </block>
+  </view></view>
+      <block wx:if="{{!extended}}">
+        <view class="content-cover">
+          <view class="cover" bindtap="bindExtend">{{speechword.spxq_zk}}</view>
+       
+        </view>
+      </block>
+    </block>
+  </view>
+
+
+  
+</view>

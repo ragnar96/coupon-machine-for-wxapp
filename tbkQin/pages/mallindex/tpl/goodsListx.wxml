@@ -1,0 +1,18 @@
+<!-- goodsList.wxml -->
+
+<!--商品详情模板2-->
+<template name="goodsListx">
+  <view class="event-wrapper" bindtap="xpkDetailTap" data-shop_title="{{goods.shop_title}}" data-pict_url="{{goods.pict_url}}" data-title="{{goods.title}}" data-zk_final_price="{{goods.zk_final_price}}" data-coupon_info="{{goods.coupon_info}}"  data-volume="{{goods.volume}}" data-small_images="{{goods.small_images}}" data-priceafterquan="{{goods.priceafterquan}}" data-item_url="{{goods.item_url}}"data-click_url="{{goods.click_url}}"  data-reserve_price="{{goods.reserve_price}}"data-fanxian="{{goods.fanxian}}" data-quan="{{goods.quan}}" data-sellerid="{{goods.seller_id}}">
+  
+    <view class="event-content">
+
+     <view wx:if = "{{!ifsp}}" class="btn3">大额返现 </view>
+
+      <image class="event-poster" src="{{goods.pict_url}}"></image>
+      <view class="event-summary">
+        <text class="event-title">{{goods.title}}</text>
+        <text class="event-time">￥{{goods.priceafterquan}}</text>
+      </view>
+    </view>
+  </view>
+</template>

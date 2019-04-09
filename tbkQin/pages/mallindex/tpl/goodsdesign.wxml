@@ -1,0 +1,15 @@
+<!-- goodsList.wxml -->
+
+<!--入场券设计模板-->
+<template name="goodsdesign">
+  <view class="event-wrapper" bindtap="designdetailTap" data-design_title="{{goods.title}}" data-design_picture="{{goods.picture}}"  data-design_content="{{goods.content}}" >
+  
+    <view class="event-content">
+
+      <image class="event-poster" src="{{goods.picture}}"></image>
+      <view class="event-summary">
+        <text class="event-title">{{goods.title}}</text>
+      </view>
+    </view>
+  </view>
+</template>

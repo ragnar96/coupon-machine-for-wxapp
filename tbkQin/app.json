@@ -1,0 +1,47 @@
+{
+  "pages":[
+    "pages/mallindex/mallindex",
+    "pages/detail/detail",
+    "pages/xpzdetail/xpzdetail",
+    "pages/detail/poster/poster",
+    "pages/searchindex/searchindex",
+    "pages/my/my",
+    "pages/findquan/findquan",
+    "pages/xpzdetail/poster/poster",
+    "pages/designdetail/designdetail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "black",
+    "selectedColor": "black",
+    "backgroundColor": "#FBFBFB",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/mallindex/mallindex",
+        "text": "",
+        "iconPath": "resources/images/shoppink.png",
+        "selectedIconPath": "resources/images/shopred.png"
+      },
+
+      {
+        "pagePath": "pages/findquan/findquan",
+        "text": "",
+        "iconPath": "resources/images/souquan.png",
+        "selectedIconPath": "resources/images/souquan.png"
+      },
+
+      {
+        "pagePath": "pages/my/my",
+        "text": "",
+        "iconPath": "resources/images/minepink.png",
+        "selectedIconPath": "resources/images/minered.png"
+      }
+    ]
+  }
+}

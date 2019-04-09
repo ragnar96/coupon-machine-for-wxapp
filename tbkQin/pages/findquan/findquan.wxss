@@ -1,0 +1,140 @@
+.searchbeforeimage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.searchheader {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  margin-top: 36px;
+}
+
+.searchmotto {
+  color: #aaa;
+}
+
+
+.undertips {
+   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 60rpx
+}
+
+.hotips {
+  border: 3px solid;
+  background: #ff0036;
+  color: #fff;
+  border-radius: 30rpx;
+  font-weight: 500;
+  font-size: 29rpx;
+  text-align: center;
+  padding: 8rpx 26rpx 8rpx 26rpx;
+  margin: 10rpx 30rpx 10rpx 0rpx;
+  box-sizing: border-box;
+  
+}
+
+
+
+
+
+
+
+
+
+
+/*search icon*/
+.search-wrapper {  
+  top: 0px;  
+  width: 100%;  
+}  
+  
+
+  
+.search-section { 
+  display: flex;  
+  flex-direction: row; 
+  background-color: #ff0036;
+  border:1px solid;
+  border-color: #ff0036;
+  border-radius:10px; 
+}  
+  
+
+  
+.search-input-wrapper {  
+  background-color: white;
+  border:2px solid;
+  border-color: #ff0036;
+  border-radius:10px; 
+  flex: 8;  
+  padding: 5px;  
+}  
+  
+.search-input {  
+  padding: 5px;
+}  
+  
+.search-clear {  
+  float: right;  
+  width: 32px;  
+  height: 32px;  
+  z-index: 998;  
+}  
+  
+.search-button-wrapper {  
+  padding: 0px;  
+}  
+  
+.search-button {
+  background-color: #ff0036;
+  flex: 1;  
+  border: none !important;  
+  color: white !important;  
+  width: 70px;  
+  height: 45px;   
+  /*解决搜索栏下面有空余的关键*/
+}  
+
+.search-image {  
+  flex: 1;  
+  border: none !important;  
+  color: white !important;  
+  width: 32px;  
+  height: 32px;  
+  
+}  
+
+/*poster*/
+.poster-session {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.poster-session .download {
+  width: 48rpx;
+  height: 48rpx;
+  position: fixed;
+  top: 20rpx;
+  right: 20rpx;
+}
+
+.poster-session .poster {
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.slide-image{
+    width:100%;
+    height: 100%;
+}

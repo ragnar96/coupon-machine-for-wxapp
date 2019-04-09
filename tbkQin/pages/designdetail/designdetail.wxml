@@ -1,0 +1,50 @@
+
+<view class="container_detail">
+   <!--滚动横幅部分-->
+    <swiper indicator-dots="{{indicatorDots}}"  interval="{{interval}}" duration="{{duration}}" style="height:{{windowWidth}}px !important">
+
+
+  <!--轮播图片-->
+    
+            <swiper-item style="height:{{windowWidth * 0.9}}px !important">
+                <image src="{{goods.picture}}" class="slide-image" style="height:{{windowWidth}}px !important"  />
+            </swiper-item>
+       
+    </swiper>
+<!--滚动横幅部分-->
+
+
+ 
+  
+  <view class="event-action event-session-spacing">
+
+    <view class="event-map">
+     
+
+      <label class="action-labela" > 
+      <text style='font-size:33rpx; font-weight:600'>题目：{{goods.title}}</text> 
+      </label>
+
+    </view>
+
+
+
+    <!--shenpi-->
+    <view class="event-ticket" >
+      <label class="action-labelb">
+      <text style='font-size:33rpx; font-weight:600'>简介：{{goods.content}} </text>
+      </label>
+  </view>  
+    <!--shenpi-->    
+
+    <view class="event-ticket" >
+      <label class="action-labelb">
+      <text style='font-size:33rpx; font-weight:600'>需知：本入场券样本仅供设计参考</text>
+      </label>
+  </view>  
+
+
+  </view>
+
+
+</view>

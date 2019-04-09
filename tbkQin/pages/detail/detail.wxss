@@ -1,0 +1,314 @@
+.container {
+  background: #fff;
+}
+
+.event-poster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f8f8f8;
+  white-space: nowrap;
+}
+
+.poster-spacing {
+  margin: 30rpx 0rpx 30rpx 0rpx;
+  padding: 0rpx 30rpx 0rpx 30rpx;
+}
+
+.event-session-spacing {
+ 
+  padding: 0rpx 30rpx 0rpx 30rpx;
+}
+
+.event-poster .poster {
+  /*width: 350rpx;*/
+  height: 670rpx;
+}
+
+.event-header {
+  display: flex;
+  flex-direction: column;
+  margin: 30rpx 0rpx 30rpx 0rpx;
+  padding: 0rpx 30rpx 0rpx 30rpx;
+  background: #fff;
+}
+
+.event-header .event-title {
+  font-size: 36rpx;
+  color: #4a4a4a;
+}
+
+.event-header .some-count {
+  font-size: 24rpx;
+  color: #9e9e9e;
+}
+
+.user-action {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  margin:0px;
+  padding: 0px; 
+}
+
+.user-action .join, .user-action .wish {
+  background-color: #ff0036;
+  font-size: 40rpx;
+  color: white;
+  text-align: center;
+  padding: 15rpx;
+  margin-right: 0rpx;
+
+}
+
+
+.sharebtn2 {
+  background-color: #ff0036;
+  font-size: 35rpx;
+  color: white;
+  text-align: center;
+  padding: 15rpx;
+  margin-right: 0rpx;
+}
+
+.btn2 {
+    color: red;
+    height: 26px;
+    margin-left: 30rpx;
+    position: absolute;
+    line-height: 125rpx;
+    text-align: center;
+    font-size: 40rpx;
+    /*border:1px solid #e6324a;*/
+}
+
+.event-action {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-schedule, .event-map, .event-ticket, .event-phone {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /*position: relative; 去掉小箭头*/
+  padding: 12rpx 20rpx 12rpx 0rpx;
+  border-bottom: 1px solid #e6e6e6;
+  box-sizing: border-box;
+}
+
+.event-schedule::after, .event-map::after, .event-ticket::after,
+.event-phone::after {
+  
+  width: 12rpx;
+  height: 12rpx;
+  position: absolute;
+  top: 50%;
+  right: -0rpx;
+  margin-top: -10rpx;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  border-width: 1px 1px 0px 0px;
+  border-color: #9e9e9e;
+  border-style: solid;
+}
+
+.event-action .action-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 15rpx;
+}
+
+.action-icon-title {
+  width: 50rpx;
+  height: 50rpx; 
+}
+
+
+.event-action .action-labela {
+  display: flex;
+  flex: 1;
+  font-size: 29rpx;
+  color: red;
+}
+
+.event-action .action-labelb {
+  display: flex;
+  flex: 1;
+  font-size: 29rpx;
+  color: orangered;
+}
+
+
+.event-action .action-label-shop {
+  display: flex;
+  flex: 1;
+  font-size: 33rpx;
+  color: red;
+  padding: 10rpx;
+}
+
+.event-action .action-text {
+  flex: 1;
+  font-size: 30rpx;
+  max-width: 560rpx;
+  color: #383838;
+  text-align: right;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  word-break: keep-all;
+}
+
+.content-session {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-session .content-title {
+  color: #9e9e9e;
+  font-size: 24rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+}
+
+.content-session .content {
+  color: #4a4a4a;
+  font-size: 24rpx;
+  width: 100%;
+  overflow: hidden;
+}
+
+.content-session-spacing {
+  margin-top: 30rpx;
+  margin-bottom: 60rpx;
+  padding: 0rpx 30rpx 0rpx 30rpx;
+  box-sizing: border-box;
+}
+
+.content-session .content-min {
+  width: 100%;
+  height: 500rpx;
+}
+
+.content-session .content-auto {
+  height: auto;
+}
+
+.content-session .content-cover {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-session .cover {
+  padding: 20rpx 0rpx 180rpx 0rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #32cb32;
+  position: absolute;
+  padding-right: 20rpx;
+  text-align: center;
+
+  width: 100%;
+  height: 180rpx;
+  margin-top: -250rpx;
+  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1)); /* Safari 5.1 - 6.0 */
+  background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1)); /* 标准的语法 */
+}
+
+.content-session  .extend {
+  padding: 40rpx 30rpx 180rpx 30rpx;
+  align-self: center;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #32cb32;
+  position: absolute;
+  padding-right: 20rpx;
+}
+
+.content-session .extend::after {
+  content: " ";
+  width: 12rpx;
+  height: 12rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: -8rpx;
+  right: -2rpx;
+  transform: matrix(0.71, 0.71, 0.71, -0.71, 0, 0);
+  border-width: 1px 1px 0px 0px;
+  border-color: #32cb32;
+  border-style: solid;
+}
+
+.music {
+  background: #666;
+}
+
+.film {
+  background: #f66;
+}
+
+.party {
+  background: #66c;
+}
+
+.drama {
+  background: #969;
+}
+
+.commonweal {
+  background: #66c;
+}
+
+.salon {
+  background: #369;
+}
+
+.exhibition {
+  background: #c93;
+}
+
+.sports {
+  background: #933;
+}
+
+.course {
+  background: #cc9;
+}
+
+.music {
+  background: #666;
+}
+
+
+
+.slide-image{
+    width:100%;
+}
+
+
+/*search icon*/
+.but-wrapper {  
+  position: fixed;/*悬停搜索框的关键样式,绝对定位*/  
+  bottom: 0;  
+  width: 100%;  
+  z-index: 999;  
+}  
+
+
+.but-wrapper2 {  
+  position: fixed;
+  bottom: 500rpx;  
+  z-index: 999;
+  right: 0rpx;  
+}  
+
+
+
+
+.shop-detail-icon-title {
+  width: 120rpx;
+  height: 120rpx; 
+  border:1px solid #9e9e9e;
+  border-radius: 20rpx;
+}

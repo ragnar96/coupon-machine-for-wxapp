@@ -1,0 +1,37 @@
+<!-- goodsList.wxml -->
+
+<!--商品详情模板-->
+<template name="goodsItem">
+    <view class="goods-item{{index % 2 == 0?' odd':''}}" bindtap="handleDetailTap" data-shop_title="{{goods.shop_title}}" data-pict_url="{{goods.pict_url}}" data-title="{{goods.title}}" data-zk_final_price="{{goods.zk_final_price}}" data-coupon_info="{{goods.coupon_info}}"  data-volume="{{goods.volume}}" data-small_images="{{goods.small_images}}" data-coupon_click_url="{{goods.coupon_click_url}}"data-priceafterquan="{{goods.priceafterquan}}" data-item_url="{{goods.item_url}}" data-fanxian="{{goods.fanxian}}" data-quan="{{goods.quan}}" data-sellerid="{{goods.seller_id}}">
+    
+            <view class="goods">
+                <view class="goods-tag ten" />
+<!--shenpi-->                  
+                <view wx:if = "{{!ifsp}}" class="btn3">{{speechword.yhq}} <view>{{goods.quan}}{{speechword.yuan}}</view> </view>
+<!--shenpi-->  
+           <view class="btn4">{{speechword.fx}} <view>{{goods.fanxian}}{{speechword.yuan}}</view> </view>
+
+
+                <image class="goods-image" src="{{goods.pict_url}}" />
+                
+                <view class="desc-wrapper">
+                    <view class="goods-desc">{{goods.title}}</view>
+                </view>
+            </view>
+            <view class="operating">
+                <view class="tips">{{speechword.yx}} {{goods.volume}}</view>
+       
+                <view class="btn2">￥{{goods.priceafterquan}}  </view>
+
+                <!--view class="btn">/ {{goods.coupon_info}}</view-->
+            </view>
+        </view>
+</template>
+
+
+<template name="goodsList">
+    <block wx:for="{{goodsList}}">
+        <template is="goodsItem" data="{{index:index,goods:item,ifsp:ifsp,speechword:speechword}}"/>
+        <!--相当于此模板的实现中，goods=item=goodsList-->
+    </block>
+</template>
